@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 export const Label = styled.label`
-display:inline-block;
+display:block;
 color: rgb(20, 100, 60);
 text-align:center;
 font-size:16px;
