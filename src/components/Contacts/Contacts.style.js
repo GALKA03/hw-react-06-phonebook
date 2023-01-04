@@ -20,7 +20,7 @@ border:none;
 width:auto;
 height:auto;
 margin-left:auto;
-margin-right:auto;
+margin-right:40px;
 font-size:20px;
 color: black;
 
