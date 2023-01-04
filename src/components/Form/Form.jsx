@@ -5,13 +5,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addContacts } from "redux/contacts/contacts-createSlice";
 import { getContacts } from 'redux/contacts/contacts-selectors';
 import Notiflix from 'notiflix';
-//import PropTypes from 'prop-types';
 
 
 export default function Form() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  //const [password, setPassword]=useState('')
+ 
    
     const dispatch = useDispatch();
    const contactsGet = useSelector(getContacts)

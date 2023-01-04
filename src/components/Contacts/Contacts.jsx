@@ -1,5 +1,4 @@
-import PropTypes from 'prop-types';
-import Notiflix from 'notiflix';
+//import Notiflix from 'notiflix';
 import { ContactsConteiner, Item, Btn,Contact,Span } from 'components/Contacts/Contacts.style'
 import { useDispatch, useSelector } from 'react-redux';
 import { deleteContacts } from 'redux/contacts/contacts-createSlice';
@@ -11,10 +10,6 @@ export const Contacts = () => {
   const contactsGet = useSelector(getContacts);
   const filterGet = useSelector(getFilter);
    console.log('contactsGet', contactsGet)
-   //const { name, number, id } = contactsGet;
-  // const contactsObj = (contactsGet) => {
-  //   return {contactsGet, id: nanoid() }
-  // };  
   
   const visibleContacts = () => {
      if (filterGet) {
@@ -28,7 +23,6 @@ export const Contacts = () => {
 	 return contactsGet;
   };
   const addVisible =visibleContacts()
-//console.log('visibleContacts',visibleContacts)
   return ( 
     <ContactsConteiner>
            {addVisible &&   

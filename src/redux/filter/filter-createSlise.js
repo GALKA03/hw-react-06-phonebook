@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getContacts } from "redux/contacts/contacts-selectors";
-import { useDispatch, useSelector } from 'react-redux';
-//const dispatch = useDispatch();
+
 
 const initialState = {
     filter:'',
