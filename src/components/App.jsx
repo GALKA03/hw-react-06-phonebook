@@ -39,7 +39,7 @@ export function App() {
 
 
   return (
-    <Conteiner>
+    <div>
       <h1
         style={{
           textAlign: 'center',
@@ -60,6 +60,6 @@ export function App() {
       </h2>
       <Filter/>
       <Contacts /*visibleContacts={visibleContacts()} *//*onRemove={deliteContacts} *//>
-    </Conteiner>
+    </div>
   );
 }
