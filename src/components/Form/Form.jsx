@@ -1,18 +1,21 @@
 import { useState } from "react";
 import { FormStyled, InputStyle, Btn } from './Form.styled';
 import { nanoid } from 'nanoid';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addContacts } from "redux/contacts/contacts-createSlice";
+import { getContacts } from 'redux/contacts/contacts-selectors';
 import Notiflix from 'notiflix';
 //import PropTypes from 'prop-types';
 
 
-export default function Form({ onSubmit }) {
+export default function Form() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
   //const [password, setPassword]=useState('')
-  const dispatch = useDispatch();
-
+   
+    const dispatch = useDispatch();
+   const contactsGet = useSelector(getContacts)
+  
   const handelChange = e => {
     const { name, value } = e.target
     switch (name) {
@@ -37,9 +40,14 @@ export default function Form({ onSubmit }) {
     
     const hendleFormSubmit = e => {
       e.preventDefault();
-      const contact = contactsObj(name, number);
-      onSubmit(contact)
-      setName('');
+    const findContact = contactsGet.find(contact =>
+			contact.name.toLowerCase().includes(contactsObj.name.toLowerCase())
+		);  console.log('findContact',findContact)
+		findContact
+			? Notiflix.Notify.failure(`${contactsObj.name} is already in contact`)
+      : dispatch(addContacts({ name, number,id: nanoid() }));
+    
+   setName('');
       setNumber('');
     
     };
