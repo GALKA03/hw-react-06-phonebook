@@ -1,4 +1,4 @@
-//import { Conteiner } from './App.styles';
+import { Conteiner } from './App.styles';
 import { Filter } from './Filter/Filter';
 import Form from './Form/Form';
 import { Contacts } from './Contacts/Contacts';
@@ -7,7 +7,7 @@ export function App() {
 
 
   return (
-    <div>
+    <Conteiner>
       <h1
         style={{
           textAlign: 'center',
@@ -28,6 +28,6 @@ export function App() {
       </h2>
       <Filter/>
       <Contacts/>
-    </div>
+    </Conteiner>
   );
 }
